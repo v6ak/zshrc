@@ -1,0 +1,7 @@
+if ! type git_super_status &> /dev/null; then
+	function git_super_status {
+	}
+fi
+
+PROMPT="%(0?..%{$bg[red]%} Failed with errorcode: %? %{$reset_color%}"$'\n'")%(#.%{$fg_bold[red]%}%n .%{$fg_bold[magenta]%})%{$fg[blue]%}%~%(1j. %{$fg_bold[red]%}(%j bg job%(2j.s.)).)%{$reset_color%}$(git_super_status)%{%(0?..$bg[red])%}%# %{$reset_color%}"
+#RPROMPT="%{%(0?.$bg[blue].$bg[red])%} %? | %D %* %{$reset_color%}"
